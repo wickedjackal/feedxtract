@@ -1,3 +1,7 @@
+# feedxtract.py
+# MIT License
+# (c) 2024 WickedJackal
+
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse, urljoin
