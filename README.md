@@ -25,6 +25,9 @@ requests: For making HTTP requests to fetch web pages.
 beautifulsoup4: For parsing HTML content and extracting URLs and RSS feed links.
 
 Installation
+Clone the repository using the following command:
+git clone https://github.com/WickedJackal/feedxtract.git
+
 You can install the required dependencies using pip and apt.
 
 apt install python3 python3-requests 
