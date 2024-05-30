@@ -1,30 +1,30 @@
 # feedxtract
 FeedXtract takes your bookmarks manager export file, searches the root domain of all your bookmarks, and extracts the RSS/Atom Feeds from them, providing a .opml file for use in RSS feed readers like Newsboat.
 
-Detailed Explanation
+**Detailed Explanation**
 This simple Python script is designed to extract URLs from an HTML file, identify RSS/Atom feeds from those URLs root domain, and then create an OPML (Outline Processor Markup Language) file containing the list of identified feeds. So far, I have only tested this in KDE Neon.
 
-Use Case:
+**Use Case:**
 I use Raindrop.io as my bookmarks manager and wanted an easy way to find all the RSS feeds from all my bookmarks and feed them into the Newsboat CLI RSS Reader. So this simple script will comb through the HTML export from Raindrop (or any other bookmarks manager, so long as it's an html file), search the root domain of each URL it finds for available RSS/Atom feeds, and if it finds them, will drop them into an OPML file ready for Newsboat to import. This was mainly meant to get my RSS Reader started easily, rather than having to individually find each RSS Feed from all my bookmarks. This makes it a little bit easier to populate my reader with feeds and then curate afterwards.
 
-Extract URLs from HTML:
+**Extract URLs from HTML:**
 extract_urls_from_html(html_content): This function uses BeautifulSoup to parse HTML content and extract all URLs from <a> tags.
 
-Find RSS Feeds:
+**Find RSS Feeds:**
 find_rss_feeds(url): This function takes a URL, sends a GET request to fetch its HTML content, and then uses BeautifulSoup to find RSS or Atom feed links within the <link> tags.
 
-Create OPML:
+**Create OPML:**
 create_opml(feeds): This function generates an OPML file from a list of feed dictionaries, each containing a title and url.
 Main Function:
 
 main(): This function reads HTML content from a file named input.html, extracts URLs using extract_urls_from_html, finds RSS feeds for each URL using find_rss_feeds, and finally creates an OPML file using create_opml.
 Dependencies
 
-FeedXtract requires the following dependencies:
+**FeedXtract requires the following dependencies:**
 requests: For making HTTP requests to fetch web pages.
 beautifulsoup4: For parsing HTML content and extracting URLs and RSS feed links.
 
-Installation
+**Installation:**
 Clone the repository using the following command:
 git clone https://github.com/wickedjackal/feedxtract.git
 
@@ -36,7 +36,7 @@ pip install requests beautifulsoup4 lxml
 Note: lxml is optional but should speed up parsing for BeautifulSoup4
 
 
-Usage Guide
+**Usage Guide**
 Prepare the HTML File:
   Option 1 : Create New
   Create an HTML file named input.html in the same directory as FeedXtract. This file should contain the HTML content with   the URLs you want to extract.
@@ -44,15 +44,15 @@ Prepare the HTML File:
   Option 2: Import
   Export an HTML file from your chosen bookmarks manager, rename it input.html, and place it in the same directory as FeedXtract
 
-Run the Script:
+**Run the Script:**
 Execute the script by running the following command in your terminal:
 python feedxtract.py
 
 
-Check the Output:
+**Check the Output:**
 After running the script, an OPML file named feeds.opml will be created in the same directory. This file will contain the list of identified RSS/Atom feeds.
 
-Notes
+**Notes**
 -Ensure the input.html file is correctly formatted (you only need to name the file input.html, anything that isn't a URL in the file will be ignored) and contains valid URLs.
 -The script assumes that the root domain of each URL might contain RSS/Atom feeds. This may not always be accurate, so adjust the logic if needed for more specific use cases.
 -This script will take a while to run, depending on how bit input.html is and how many bookmarks you have.
@@ -61,7 +61,7 @@ Notes
 -After importing feeds.opml into Newsboat for the first time, I noticed that no items were actually loaded in the feeds. I hit Shift-R to refresh all, and voila! Everything updated and items became available.
 
 
-Patch Notes:
+**Patch Notes:**
 
 V0.4.1 - Revert
 Explanation:
