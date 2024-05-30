@@ -26,7 +26,7 @@ beautifulsoup4: For parsing HTML content and extracting URLs and RSS feed links.
 
 Installation
 Clone the repository using the following command:
-git clone https://github.com/WickedJackal/feedxtract.git
+git clone https://github.com/wickedjackal/feedxtract.git
 
 You can install the required dependencies using pip and apt.
 
